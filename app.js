@@ -229,10 +229,25 @@ ingresada (suma, resta, multiplicación, división) el programa deberá mostrar 
 resultado. En caso de haber elegido división realizar la operación siempre que sea posible o mostrar un mensaje de
 ERROR si el divisor ingresado fue 0.
 */
-let operacion=resultado;
+/*
+let num1 = prompt('Ingrese el primer número');
+let operacion = prompt("Ingrese '+, -, * o /'");
+let num2 = prompt('Ingrese el segundo número');
 
-
-
+if (operacion == '+') {
+  alert(parseInt(num1) + parseInt(num2));
+} else if (operacion == '-') {
+  alert(parseInt(num1) - parseInt(num2));
+} else if (operacion == '*') {
+  alert(parseInt(num1) * parseInt(num2));
+} else if (operacion == '/') {
+  if (num2 !== "0") {
+    alert(parseInt(num1) / parseInt(num2));
+  } else if (num2 == "0") {
+    alert("ERROR");
+  }
+}
+*/
 /*
 13. Crear un programa que permita ingresar todos los datos de tu documento nacional de identidad, mostrar por 
 pantalla un mensaje que imprima todos los datos ingresados y pregunte si están correctos los mismos. En caso 
@@ -240,3 +255,28 @@ afirmativo, crear un objeto llamado dni con todos los datos ingresados y mostrar
  mas un mensaje de registro exitoso, en caso de que la persona rechace confirmar los datos, mostrar un mensaje que 
  diga: vuelva a intentarlo en 1 mes.
 */
+
+let fName=prompt("Escriba su nombre");
+let lName=prompt("Escriba su apellido");
+let dniNumber=prompt("Escriba su número de dni");
+let birth=prompt("Escriba su fecha de nacimiento");
+let adress=prompt("Escriba su domicilio");
+let nac=prompt("Escriba su nacionalidad");
+
+let dni ={
+  "Nombre":fName,
+  "Apellido":lName,
+  "DNI":dniNumber,
+  "Fecha de Nacimiento":birth,
+  "Domicilio":adress,
+  "Nacionalidad":nac
+}
+let resultado=confirm(JSON.stringify(dni)+"\n¿ Los datos ingresados con correctos?")
+if (resultado==true) {
+  console.table(dni+"Su registro fue exitoso")
+} else {
+  alert("Vuelva a intentarlo en 1 mes")
+}
+
+
+
